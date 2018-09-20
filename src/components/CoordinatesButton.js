@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 
 class CoordinatesButton extends Component {
-  createArray(e) {
-    // debugger
-    this.onReceiveCoordinates([e.clientX, e.clientY])
+  handleClick = e => {
+    this.props.onReceiveCoordinates([e.clientX, e.clientY])
   }
-  
+
   render() {
     return (
-      <button onClick={e => this.createArray(e)}></button>
+      <button onClick={this.handleClick}>Coordinates</button>
     )
-  }  
+  }
 }
 
 export default CoordinatesButton
